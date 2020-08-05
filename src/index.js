@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-
+import { useDarkMode } from "../hooks/useDarkMode"
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
 
@@ -19,7 +19,7 @@ const App = () => {
       .catch(err => console.log(err));
   }, []);
   return (
-    <div className={darkmode ? "dark-mode App" : "App"}>
+    <div className={useDarkMode ? "dark-mode App" : "App"}>
       <Navbar />
       <Charts coinData={coinData} />
     </div>
